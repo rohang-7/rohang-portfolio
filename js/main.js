@@ -36,30 +36,3 @@ sections.forEach(s=>spy.observe(s));
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Mobile nav toggle
-const root = document.documentElement;
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (navToggle && navLinks) {
-  function closeMenu() {
-    document.body.classList.remove('nav-open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  navToggle.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  // Close on link click (nice for one-page sites)
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
-  });
-
-  // Close on ESC
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-}
-
