@@ -15,7 +15,7 @@ h1,h2,h3{margin:0 0 10px}
 /* NAV */
 .nav{position:sticky;top:0;z-index:50;background:rgba(7,10,24,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-.logo{font-weight:900;letter-spacing:.5px;color:var(--text);text-decoration:none}
+.logo{font-weight:900; font-size: clamp(24px, 3vw, 40px); letter-spacing:0.4px;color:var(--text);text-decoration:none}
 .logo span{color:var(--accent)}
 .nav nav{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .nav-link{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:.6rem}
