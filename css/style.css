@@ -178,14 +178,54 @@ h1,h2,h3{margin:0 0 10px}
 
 /* Education timeline */
 .edu-wrap{position:relative;margin-top:10px;padding:20px 0}
-.edu-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,.12);transform:translateX(-50%)}
+/* Education timeline — bigger center line */
+.edu-line{
+  position:absolute; left:50%;
+  transform:translateX(-50%);
+  width:2px; height:100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,.06), rgba(255,255,255,.12), rgba(255,255,255,.06));
+}
+
 .edu-item{position:relative;display:flex;gap:14px;margin:34px 0}
 .edu-item.left{justify-content:flex-start}
 .edu-item.right{justify-content:flex-end}
 .edu-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;max-width:520px}
 .edu-meta{color:var(--muted);margin:4px 0 0}
-.edu-dot{position:absolute;left:50%;transform:translate(-50%,-2px);top:8px;width:44px;height:44px;border-radius:50%;background:#0f1430;border:2px solid rgba(255,255,255,.18);display:grid;place-items:center;z-index:2}
-.edu-dot img{width:26px;height:26px;opacity:.95}
+
+/* Bigger dot with ring + shadow */
+.edu-dot{
+  position:absolute; left:calc(50% - 32px); /* centers 64px dot on the line */
+  width:64px; height:64px; border-radius:50%;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25), inset 0 0 0 6px rgba(8,16,32,.6);
+  backdrop-filter: blur(4px);
+}
+.edu-dot img{ width:40px; height:40px; object-fit: contain; filter: none; }
+
+/* Space so cards don’t collide when dots get bigger */
+.edu-item{ margin: 28px 0; }
+
+/* New education detail blocks */
+.edu-desc{ margin:.6rem 0 1rem; color: var(--muted); }
+
+.edu-lists{
+  display:grid; gap:16px;
+  grid-template-columns: 1fr;
+}
+.edu-lists h4{ margin:.2rem 0 .4rem; font-size: .98rem; opacity:.9; }
+.edu-lists ul{ margin:0; padding-left: 18px; line-height:1.6; }
+
+@media (min-width: 720px){
+  .edu-lists{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile tweaks for timeline */
+@media (max-width: 920px){
+  .edu-dot{ left:16px; }      /* use the same left you already set on mobile */
+  .edu-item{ margin-left:64px; }
+}
 
 /* Contact */
 .center{text-align:center}
