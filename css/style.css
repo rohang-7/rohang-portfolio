@@ -272,3 +272,28 @@ h1,h2,h3{margin:0 0 10px}
   .edu-item.right{justify-content:flex-start}
   .edu-dot{left:20px;transform:none}
 }
+
+/* Hide hamburger menu on desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle-bar {
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+}
+
